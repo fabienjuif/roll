@@ -1,0 +1,24 @@
+.dice {
+  display: flex;
+  border: none;
+}
+
+.dice > div {
+  padding: 1em;
+}
+
+.dice-4 {
+  background-color: pink;
+}
+
+.dice-6 {
+  background-color: blue;
+}
+
+.dice-10 {
+  background-color: yellow;
+}
+
+.dice-20 {
+  background-color: green;
+}

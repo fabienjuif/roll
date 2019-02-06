@@ -1,0 +1,15 @@
+.app {
+  text-align: center;
+}
+
+.dices {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.dices .dice {
+  margin: 1em;
+}
