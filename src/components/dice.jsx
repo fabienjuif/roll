@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import useSpring from 'react-use/lib/useSpring'
-import useRandom from './useRandom'
-import useBus from './useBus'
+import useRandom from '../hooks/useRandom'
+import useBus from '../hooks/useBus'
 import './dice.css'
 
 const Dice = ({ faces }) => {

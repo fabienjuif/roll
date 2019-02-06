@@ -1,29 +1,28 @@
 import React, { useState } from 'react'
 import useLocalStorage from 'react-use/lib/useLocalStorage'
-import Dice from './dice'
-import { dispatch } from './useBus'
+import AddDiceModal from './components/addDiceModal'
+import Dice from './components/dice'
+import { dispatch } from './hooks/useBus'
 import './app.css'
 
-const possibleDicesFaces = [
-  4,
-  6,
-  10,
-  20,
-]
-
-const getRandomFaces = () => possibleDicesFaces[Math.floor(Math.random() * possibleDicesFaces.length)]
-
 const App = () => {
-  const [dices, setDices] = useLocalStorage('dices', [])
+  const [printModal, setPrintModal] = useState(false)
 
-  const addDice = () => setDices([...dices, { id: Date.now(), faces: getRandomFaces() }])
+  const [dices, setDices] = useLocalStorage('dices', [])
   const reset = () => setDices([])
   const roll = () => dispatch('@@ui/ROLL>DICES')
 
+  const addDice = (faces) => {
+    setDices([...dices, { id: Date.now(), faces }])
+    setPrintModal(false)
+  }
+
   return (
     <div className="app">
+      {printModal && <AddDiceModal addDice={addDice} />}
+
       <button
-        onClick={addDice}
+        onClick={() => setPrintModal(!printModal)}
       >
         Add a dice
       </button>
