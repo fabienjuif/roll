@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
 import useOutsideClick from 'react-use/lib/useOutsideClick'
 import './addDiceModal.css'
 
@@ -20,6 +21,7 @@ const AddDiceModal = ({ addDice, onClose }) => {
         ref={ref}
       >
         <button
+          type="button"
           className="btn-close"
           onClick={onClose}
         >
@@ -30,6 +32,7 @@ const AddDiceModal = ({ addDice, onClose }) => {
           {faces.map(number => (
             <li key={number}>
               <button
+                type="button"
                 onClick={() => addDice(number)}
               >
                 {number}
@@ -40,6 +43,11 @@ const AddDiceModal = ({ addDice, onClose }) => {
       </div>
     </div>
   )
+}
+
+AddDiceModal.propTypes = {
+  addDice: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
 }
 
 export default AddDiceModal

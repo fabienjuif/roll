@@ -27,18 +27,21 @@ const App = () => {
       )}
 
       <button
+        type="button"
         onClick={() => setPrintModal(!printModal)}
       >
         Add a dice
       </button>
 
       <button
+        type="button"
         onClick={reset}
       >
         Reset
       </button>
 
       <button
+        type="button"
         onClick={roll}
       >
         Roll all dices
