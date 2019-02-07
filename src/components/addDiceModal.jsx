@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import useOutsideClick from 'react-use/lib/useOutsideClick'
 import './addDiceModal.css'
 
 const faces = [
@@ -8,10 +9,23 @@ const faces = [
   20,
 ]
 
-const AddDiceModal = ({ addDice }) => {
+const AddDiceModal = ({ addDice, onClose }) => {
+  const ref = useRef(null)
+  useOutsideClick(ref, onClose)
+
   return (
     <div className="modal">
-      <div className="card">
+      <div
+        className="card"
+        ref={ref}
+      >
+        <button
+          className="btn-close"
+          onClick={onClose}
+        >
+          X
+        </button>
+
         <ul className="list">
           {faces.map(number => (
             <li key={number}>

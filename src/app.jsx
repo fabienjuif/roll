@@ -19,7 +19,12 @@ const App = () => {
 
   return (
     <div className="app">
-      {printModal && <AddDiceModal addDice={addDice} />}
+      {printModal && (
+        <AddDiceModal
+          addDice={addDice}
+          onClose={() => setPrintModal(false)}
+        />
+      )}
 
       <button
         onClick={() => setPrintModal(!printModal)}
