@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import useRandom from './useRandom'
-import useBus from './useBus'
+import useRandom from '../hooks/useRandom'
+import useBus from '../hooks/useBus'
 import './dice.css'
 
 const Dice = ({ faces }) => {
