@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-// import useSpring from 'react-use/lib/useSpring'
+import React from 'react'
+import PropTypes from 'prop-types'
 import useRandom from './useRandom'
 import useBus from './useBus'
 import './dice.css'
@@ -11,6 +11,7 @@ const Dice = ({ faces }) => {
 
   return (
     <button
+      type="button"
       onClick={rand}
       className={`dice dice-${faces}`}
     >
@@ -27,6 +28,10 @@ const Dice = ({ faces }) => {
       </div>
     </button>
   )
+}
+
+Dice.propTypes = {
+  faces: PropTypes.number.isRequired,
 }
 
 export default Dice

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useLocalStorage from 'react-use/lib/useLocalStorage'
 import Dice from './dice'
 import { dispatch } from './useBus'
@@ -23,18 +23,21 @@ const App = () => {
   return (
     <div className="app">
       <button
+        type="button"
         onClick={addDice}
       >
         Add a dice
       </button>
 
       <button
+        type="button"
         onClick={reset}
       >
         Reset
       </button>
 
       <button
+        type="button"
         onClick={roll}
       >
         Roll all dices
