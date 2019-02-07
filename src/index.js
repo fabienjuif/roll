@@ -4,10 +4,13 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import 'normalize.css'
 import App from './app'
+import { DicesProvider } from './contexts/dices'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
-  React.createElement(App),
+  <DicesProvider>
+    <App />
+  </DicesProvider>,
   document.getElementById('root'),
 )
 
