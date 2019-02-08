@@ -19,7 +19,7 @@ const DicesProvider = ({ children }) => {
     })
   }
 
-  const reset = () => {
+  const clear = () => {
     setDices({})
   }
 
@@ -43,7 +43,7 @@ const DicesProvider = ({ children }) => {
       value={{
         dices: Object.values(dices),
         setRoll,
-        reset,
+        clear,
         add,
       }}
     >
