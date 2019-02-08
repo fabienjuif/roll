@@ -23,8 +23,8 @@ const LocalesProvider = ({ children }) => {
       if (navigator) {
         const { language, userLanguage, languages } = navigator
         currentLang = language || userLanguage || (languages && languages.length > 0 && languages[0]) || 'en'
-        if (currentLang.length >= 2) currentLang = currentLang.substring(0, 2)
-        else currentLang = 'en'
+        if (currentLang.length > 2) currentLang = currentLang.substring(0, 2)
+        if (currentLang.length < 2) currentLang = 'en'
       }
       setLang(currentLang)
       return
