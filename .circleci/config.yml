@@ -15,3 +15,31 @@ jobs:
             - ~/.cache/yarn
           key: cache-{{ checksum "yarn.lock" }}
       - run: yarn ci
+
+  deploy:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - cache-{{ checksum "yarn.lock" }}
+      - run: yarn
+      - save_cache:
+          paths:
+            - node_modules
+            - ~/.cache/yarn
+          key: cache-{{ checksum "yarn.lock" }}
+      - run: yarn deploy
+
+workflows:
+  version: 2
+  workflow_name:
+    jobs:
+      - build
+      - deploy:
+          branches:
+            - master
+            - deploy
+          requires:
+            - build
