@@ -14,7 +14,6 @@ Feel free to add yourself in this section!
  - [Fabien JUIF](https://github.com/fabienjuif)
  - [Delphine MILLET](https://github.com/delphinemillet)
 
-
 ## 🛠 Hack it!
 Here are the main commands:
 1. Install dependencies: `yarn`
