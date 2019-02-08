@@ -24,7 +24,7 @@ const DicesProvider = ({ children }) => {
     setDices({})
   }
 
-  const add = ({ faces = 4 } = {}) => {
+  const add = ({ faces = 6 } = {}) => {
     const dice = {
       faces,
       id: Date.now(),
