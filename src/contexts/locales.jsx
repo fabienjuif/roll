@@ -17,7 +17,7 @@ const LocalesProvider = ({ children }) => {
   useEffect(() => {
     // load lang
     let currentLang = lang
-    if (lang === undefined) {
+    if (!lang) {
       // retrieve lang from navigator
       const { navigator } = window
       if (navigator) {
