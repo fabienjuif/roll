@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "790dd89eb0c4cbb7b665",
-    "url": "/roll/static/css/main.a53d3c06.chunk.css"
+    "revision": "d125269ec3027caffdae",
+    "url": "/roll/static/css/main.b2c07c99.chunk.css"
   },
   {
-    "revision": "790dd89eb0c4cbb7b665",
-    "url": "/roll/static/js/main.790dd89e.chunk.js"
+    "revision": "d125269ec3027caffdae",
+    "url": "/roll/static/js/main.d125269e.chunk.js"
   },
   {
     "revision": "896582f14cee2ede2433",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/roll/static/js/runtime~main.fd522832.js"
   },
   {
-    "revision": "209eec45cbbaebeddd5068f34619e2d2",
+    "revision": "32913beacd6542bf00c0d160a2f6fdd5",
     "url": "/roll/index.html"
   }
 ];
