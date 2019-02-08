@@ -39,6 +39,14 @@ const DicesProvider = ({ children }) => {
     return dice
   }
 
+  const remove = id => () => {
+    if (id === undefined || id === null) return
+
+    const newDices = { ...dices }
+    delete newDices[id]
+    setDices(newDices)
+  }
+
   if (!init) {
     setInit(true)
 
@@ -55,6 +63,7 @@ const DicesProvider = ({ children }) => {
         setRoll,
         clear,
         add,
+        remove,
       }}
     >
       {children}
