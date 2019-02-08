@@ -1,10 +1,23 @@
 .dice {
   display: flex;
-  border: none;
 }
 
-.dice > div {
+.dice > button {
+  border: none;
+  background-color: transparent;
+}
+
+.dice > .roll {
+  display: flex;
+}
+
+.dice > .roll > * {
   padding: 1em;
+}
+
+.dice > .remove {
+  color: white;
+  background-color: #0000004d;
 }
 
 .dice-4 {

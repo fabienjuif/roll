@@ -38,6 +38,16 @@ const DicesProvider = ({ children }) => {
     return dice
   }
 
+  const remove = id => (e) => {
+    e.stopPropagation()
+
+    if (id === undefined || id === null) return
+
+    const newDices = { ...dices }
+    delete newDices[id]
+    setDices(newDices)
+  }
+
   return (
     <Context.Provider
       value={{
@@ -45,6 +55,7 @@ const DicesProvider = ({ children }) => {
         setRoll,
         reset,
         add,
+        remove,
       }}
     >
       {children}

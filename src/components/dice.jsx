@@ -10,27 +10,39 @@ const Dice = ({ id, faces }) => {
 
   useBus('@@ui/ROLL>DICES', rand)
 
-  const { setRoll } = useContext(DicesContext)
+  const { setRoll, remove } = useContext(DicesContext)
   setRoll(id, value)
 
   return (
-    <button
-      type="button"
-      onClick={rand}
+    <div
       className={`dice dice-${faces}`}
     >
-      <div
-        className="faces"
+      <button
+        type="button"
+        className="roll"
+        onClick={rand}
       >
-        {faces}
-      </div>
+        <div
+          className="faces"
+        >
+          {faces}
+        </div>
 
-      <div
-        className="value"
+        <div
+          className="value"
+        >
+          {value}
+        </div>
+      </button>
+
+      <button
+        type="button"
+        className="remove"
+        onClick={remove(id)}
       >
-        {value}
-      </div>
-    </button>
+        x
+      </button>
+    </div>
   )
 }
 
