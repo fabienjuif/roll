@@ -1,19 +1,18 @@
-import React, { useState } from 'react'
-import useLocalStorage from 'react-use/lib/useLocalStorage'
+import React, { useState, useContext } from 'react'
 import AddDiceModal from './components/addDiceModal'
 import Dice from './components/dice'
 import { dispatch } from './hooks/useBus'
+import DicesContext from './contexts/dices'
 import './app.css'
 
 const App = () => {
   const [printModal, setPrintModal] = useState(false)
 
-  const [dices, setDices] = useLocalStorage('dices', [])
-  const reset = () => setDices([])
-  const roll = () => dispatch('@@ui/ROLL>DICES')
+  const { dices, reset, add } = useContext(DicesContext)
 
   const addDice = (faces) => {
-    setDices([...dices, { id: Date.now(), faces }])
+    add({ faces })
+
     setPrintModal(false)
   }
 
@@ -42,16 +41,35 @@ const App = () => {
 
       <button
         type="button"
-        onClick={roll}
+        onClick={() => dispatch('@@ui/ROLL>DICES')}
       >
         Roll all dices
       </button>
+
+      {dices.length > 0 && (
+        <div>
+          <span>Total</span>
+          <span>
+            {dices.reduce((acc, { roll = 0 }) => acc + roll, 0)}
+          </span>
+        </div>
+      )}
+
+      {dices.length === 2 && (
+        <div>
+          <span>Subtract</span>
+          <span>
+            {Math.abs(dices[0].roll - dices[1].roll) || 0}
+          </span>
+        </div>
+      )}
 
       <ul className="dices">
         {dices.map(({ faces, id }) => (
           <li key={id}>
             <Dice
               key={id}
+              id={id}
               faces={faces}
             />
           </li>
