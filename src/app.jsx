@@ -11,10 +11,7 @@ const App = () => {
   const { dices, reset, add } = useContext(DicesContext)
 
   const addDice = (faces) => {
-    add({
-      id: Date.now(),
-      faces,
-    })
+    add({ faces })
 
     setPrintModal(false)
   }
@@ -62,7 +59,7 @@ const App = () => {
         <div>
           <span>Subtract</span>
           <span>
-            {Math.abs(dices[0].roll - dices[1].roll) || ''}
+            {Math.abs(dices[0].roll - dices[1].roll) || 0}
           </span>
         </div>
       )}

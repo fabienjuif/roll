@@ -23,11 +23,19 @@ const DicesProvider = ({ children }) => {
     setDices({})
   }
 
-  const add = (dice) => {
+  const add = ({ faces = 4 } = {}) => {
+    const dice = {
+      faces,
+      id: Date.now(),
+      roll: undefined,
+    }
+
     setDices({
       ...dices,
       [dice.id]: dice,
     })
+
+    return dice
   }
 
   return (
