@@ -16,12 +16,12 @@ Feel free to add yourself in this section!
 
 
 ## 🛠 Hack it!
-Here are the principals commands:
+Here are the main commands:
 1. Install dependencies: `yarn`
-2. Run de dev server: `yarn start`
+2. Run the dev server: `yarn start`
 3. Run the build: `yarn deploy:build` 
 4. Publish on your gh-pages: `yarn gh-pages -d build`
 
-If you want to check your code quality, you can run `yarn ci`, this is the same script that will be run from CircleCI for each commits.
+If you want to check your code quality, you can run `yarn ci`, this is the same script that will be run from CircleCI for each commit.
 
 Feel free to play around and open PRs!
