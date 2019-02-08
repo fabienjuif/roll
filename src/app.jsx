@@ -46,7 +46,7 @@ const App = () => {
         Roll all dices
       </button>
 
-      {dices.length > 0 && (
+      {dices.length > 1 && (
         <div>
           <span>Total</span>
           <span>
