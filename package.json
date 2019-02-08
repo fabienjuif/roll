@@ -2,7 +2,7 @@
   "name": "roll",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fabienjuif.github.io/roll/",
+  "homepage": "https://roll.sh/",
   "scripts": {
     "start": "BROWSER=none react-scripts start",
     "test": "react-scripts test",
