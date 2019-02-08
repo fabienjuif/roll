@@ -38,9 +38,7 @@ const DicesProvider = ({ children }) => {
     return dice
   }
 
-  const remove = id => (e) => {
-    e.stopPropagation()
-
+  const remove = id => () => {
     if (id === undefined || id === null) return
 
     const newDices = { ...dices }
