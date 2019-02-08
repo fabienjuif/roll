@@ -5,11 +5,14 @@ import './index.css'
 import 'normalize.css'
 import App from './app'
 import { DicesProvider } from './contexts/dices'
+import { LocalesProvider } from './contexts/locales'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   <DicesProvider>
-    <App />
+    <LocalesProvider>
+      <App />
+    </LocalesProvider>
   </DicesProvider>,
   document.getElementById('root'),
 )
