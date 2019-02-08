@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --cache src --ext js,jsx",
     "ci": "run-p lint",
-    "deploy:gh-pages": "gh-pages -d build",
+    "deploy:gh-pages": "gh-pages -d build -u \"CircleCI <circleci@deploy.com>\" ",
     "deploy:build": "NODE_ENV=production react-scripts build",
     "deploy": "run-s deploy:build deploy:gh-pages"
   },
