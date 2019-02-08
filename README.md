@@ -1,12 +1,12 @@
 # Roll
 > Simply choose your dices, and roll them!
 
-This application help us play with multiple dices at once.
+This application helps us play with multiple dices at once.
 
 ## 🎲 Test it!
 Just go to the [website](https://fabienjuif.github.io/roll/).
 
-## 🤔 Why are you developping this app?
+## 🤔 Why are we developping this app?
 This is a nice pretext to play around react hooks and PWA.
 
 ## 🤝 Contributors
