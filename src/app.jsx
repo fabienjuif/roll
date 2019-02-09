@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, Fragment } from 'react'
 import AddDiceModal from './components/addDiceModal'
 import Dice from './components/dice'
 import { dispatch } from './hooks/useBus'
@@ -30,48 +30,54 @@ const App = () => {
         />
       )}
 
-      <button
-        type="button"
-        onClick={() => setPrintModal(!printModal)}
-      >
-        {messages.add}
-      </button>
+      <div className="actions">
+        <button
+          type="button"
+          onClick={() => setPrintModal(!printModal)}
+        >
+          {messages.add}
+        </button>
 
-      <button
-        type="button"
-        onClick={clear}
-      >
-        {messages.clear}
-      </button>
+        <button
+          type="button"
+          onClick={clear}
+        >
+          {messages.clear}
+        </button>
 
-      <button
-        type="button"
-        onClick={() => dispatch('@@ui/ROLL>DICES')}
-      >
-        {messages.rollAllDices}
-      </button>
+        <button
+          type="button"
+          onClick={() => dispatch('@@ui/ROLL>DICES')}
+        >
+          {messages.rollAllDices}
+        </button>
+      </div>
 
-      {dices.length > 1 && (
-        <div>
-          <span>
-            {messages.total}
-          </span>
-          <span>
-            {dices.reduce((acc, { roll = 0 }) => acc + roll, 0)}
-          </span>
-        </div>
-      )}
+      <div className="stats total">
+        {dices.length > 1 && (
+          <Fragment>
+            <span className="label">
+              {messages.total}
+            </span>
+            <span>
+              {dices.reduce((acc, { roll = 0 }) => acc + roll, 0)}
+            </span>
+          </Fragment>
+        )}
+      </div>
 
-      {dices.length === 2 && (
-        <div>
-          <span>
-            {messages.substract}
-          </span>
-          <span>
-            {Math.abs(dices[0].roll - dices[1].roll) || 0}
-          </span>
-        </div>
-      )}
+      <div className="stats substract">
+        {dices.length === 2 && (
+          <Fragment>
+            <span className="label">
+              {messages.substract}
+            </span>
+            <span>
+              {Math.abs(dices[0].roll - dices[1].roll) || 0}
+            </span>
+          </Fragment>
+        )}
+      </div>
 
       <ul className="dices">
         {dices.map(({ faces, id }) => (

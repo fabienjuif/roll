@@ -23,6 +23,17 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Roll | Roll your dices!</title>
+
+    <!-- From https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ -->
+    <script>
+      const setMaxHeight = () => {
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+      }
+
+      window.addEventListener('resize', setMaxHeight)
+      setMaxHeight()
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
