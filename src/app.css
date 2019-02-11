@@ -1,5 +1,43 @@
 .app {
+  display: grid;
+  flex: 1;
   text-align: center;
+  grid-template:
+    "total substract"
+    "dices dices"
+    "actions actions"
+  ;
+  grid-template-rows:
+    minmax(3em, 10%)
+    auto
+    minmax(3em, 10%)
+  ;
+}
+
+.actions {
+  grid-area: actions;
+  padding: 2em;
+}
+
+.total {
+  grid-area: total;
+  margin-left: auto;
+}
+
+.substract {
+  grid-area: substract;
+  margin-right: auto;
+}
+
+.stats {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats > .label {
+  padding: 1em;
+  color: #545454;
 }
 
 .dices {
@@ -8,6 +46,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  grid-area: dices;
+  padding: 2em;
 }
 
 .dices .dice {
