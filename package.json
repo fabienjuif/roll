@@ -4,16 +4,17 @@
   "private": true,
   "homepage": "https://roll.sh/",
   "scripts": {
-    "start": "BROWSER=none react-scripts start",
+    "start": "cross-env BROWSER=none react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --cache src --ext js,jsx",
     "ci": "run-p lint",
     "deploy:gh-pages": "gh-pages -d build -u \"CircleCI <circleci@deploy.com>\" -r \"https://${GH_TOKEN}@github.com/fabienjuif/roll.git\" -x",
-    "deploy:build": "NODE_ENV=production react-scripts build",
+    "deploy:build": "cross-env NODE_ENV=production react-scripts build",
     "deploy": "run-s deploy:build deploy:gh-pages"
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.8.1",
