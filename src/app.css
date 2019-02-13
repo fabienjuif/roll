@@ -2,8 +2,12 @@
   display: grid;
   flex: 1;
   text-align: center;
-  grid-template:
-    "total substract"
+  background: #000000;
+  color: #ffffff;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "substract total"
     "dices dices"
     "actions actions"
   ;
@@ -16,28 +20,67 @@
 
 .actions {
   grid-area: actions;
-  padding: 2em;
+}
+
+.actions button {
+  border: 0;
+  background-color: transparent;
+  padding: 1em 2em;
+}
+
+.actions__primary {
+  width: 100%;
+}
+
+button.actions__primary {
+  background: #6d327c;
+  background: linear-gradient(to right, #6d327c, #485DA6, #00a1ba, #36C486);
+  color: #ffffff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.actions__secondary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions__secondary button{
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  border: 2px solid;
 }
 
 .total {
+  grid-column: 1;
   grid-area: total;
-  margin-left: auto;
+  background: #008094;
 }
 
 .substract {
+  grid-column: 2;
   grid-area: substract;
-  margin-right: auto;
+  background: #6d327c;
+}
+
+.inactive {
+  opacity: .5;
 }
 
 .stats {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
+  padding: 1em;
+  height: 100%;
 }
 
-.stats > .label {
-  padding: 1em;
-  color: #545454;
+.stats__label {
+  color: #ffffff;
+  font-size: .8em;
+}
+
+.stats__value {
+  font-size: 3em;
+  font-weight: 600;
 }
 
 .dices {
