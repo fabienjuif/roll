@@ -18,6 +18,10 @@ const App = () => {
 
     setPrintModal(false)
   }
+  const roll = () => {
+    if (dices.length === 0) setPrintModal(true)
+    else dispatch('@@ui/ROLL>DICES')
+  }
 
   // locales
   const messages = useLocales()
@@ -50,7 +54,7 @@ const App = () => {
 
         <button
           type="button"
-          onClick={() => dispatch('@@ui/ROLL>DICES')}
+          onClick={roll}
           className="actions__primary"
         >
           {dices.length > 1 ? messages.rollAllDices : messages.roll}
@@ -71,7 +75,7 @@ const App = () => {
           {messages.total}
         </div>
         <div className="stats__value">
-          {dices.reduce((acc, { roll = 0 }) => acc + roll, 0)}
+          {dices.reduce((acc, dice) => acc + (dice.roll || 0), 0)}
         </div>
       </div>
 
