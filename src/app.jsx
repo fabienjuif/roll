@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import cn from 'classnames'
 import AddDiceModal from './components/addDiceModal'
 import Dice from './components/dice'
 import { dispatch } from './hooks/useBus'
@@ -56,7 +57,7 @@ const App = () => {
         </button>
       </div>
 
-      <div className={`stats substract ${dices.length !== 2 && 'inactive'}`}>
+      <div className={cn('stats', 'substract', { inactive: dices.length !== 2 })}>
         <div className="stats__label">
           {messages.substract}
         </div>
