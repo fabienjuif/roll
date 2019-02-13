@@ -50,22 +50,25 @@ const App = () => {
         <button
           type="button"
           onClick={() => dispatch('@@ui/ROLL>DICES')}
-          className="actions__primary"
+          className="bg_primary actions__primary"
         >
           {dices.length > 1 ? messages.rollAllDices : messages.roll}
         </button>
       </div>
 
-      <div className={`stats substract ${dices.length !== 2 && 'inactive'}`}>
+      <div className={`bg_primary stats substract ${dices.length !== 2 && 'inactive'}`}>
         <div className="stats__label">
           {messages.substract}
         </div>
         <div className="stats__value">
-          {dices.length === 2 ? Math.abs(dices[0].roll - dices[1].roll) || 0 : 'X'}
+          {dices.length === 2
+            ? Math.abs(dices[0].roll - dices[1].roll) || 0
+            : 'X'
+          }
         </div>
       </div>
 
-      <div className="stats total">
+      <div className="bg_secondary stats total">
         <div className="stats__label">
           {messages.total}
         </div>
