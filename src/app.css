@@ -12,9 +12,9 @@
     "actions actions"
   ;
   grid-template-rows:
-    minmax(3em, 10%)
+    minmax(min-content, max-content)
     auto
-    minmax(3em, 10%)
+    minmax(min-content, max-content)
   ;
 }
 
@@ -70,7 +70,6 @@ button.actions__primary {
 
 .stats {
   padding: 1em;
-  height: 100%;
 }
 
 .stats__label {
