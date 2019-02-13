@@ -8,9 +8,9 @@
     "actions actions"
   ;
   grid-template-rows:
-    minmax(3em, 10%)
+    minmax(min-content, max-content)
     auto
-    minmax(3em, 10%)
+    minmax(min-content, max-content)
   ;
 }
 
