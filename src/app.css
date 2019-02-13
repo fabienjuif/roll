@@ -1,9 +1,28 @@
+.primary {
+  color: var(--primary);
+  background-color: var(--light);
+}
+
+.bg_primary {
+  color: var(--light);
+  background-color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+  background-color: var(--light);
+}
+
+.bg_secondary {
+  color: var(--light);
+  background-color: var(--secondary);
+}
+
 .app {
   display: grid;
   flex: 1;
   text-align: center;
-  background: #000000;
-  color: #ffffff;
+  background: var(--dark);
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   grid-template-areas:
@@ -33,9 +52,7 @@
 }
 
 button.actions__primary {
-  background: #6d327c;
   background: linear-gradient(to right, #6d327c, #485DA6, #00a1ba, #36C486);
-  color: #ffffff;
   font-size: 1.5em;
   text-transform: uppercase;
 }
@@ -45,23 +62,20 @@ button.actions__primary {
   justify-content: space-between;
 }
 
-.actions__secondary button{
+.actions__secondary button {
   display: flex;
   justify-content: space-between;
-  color: #ffffff;
   border: 2px solid;
 }
 
 .total {
   grid-column: 1;
   grid-area: total;
-  background: #008094;
 }
 
 .substract {
   grid-column: 2;
   grid-area: substract;
-  background: #6d327c;
 }
 
 .inactive {
@@ -73,7 +87,6 @@ button.actions__primary {
 }
 
 .stats__label {
-  color: #ffffff;
   font-size: .8em;
 }
 
