@@ -15,21 +15,21 @@ const Dice = ({ id, faces }) => {
 
   return (
     <div
-      className={`dice dice-${faces}`}
+      className={`m-dice -dice-${faces}`}
     >
       <button
         type="button"
-        className="roll"
+        className="a-button a-dice__roll"
         onClick={rand}
       >
         <div
-          className="faces"
+          className="a-dice__faces"
         >
           {faces}
         </div>
 
         <div
-          className="value"
+          className="a-dice__value"
         >
           {value}
         </div>
@@ -37,7 +37,7 @@ const Dice = ({ id, faces }) => {
 
       <button
         type="button"
-        className="remove"
+        className="a-button a-dice__remove"
         onClick={remove(id)}
       >
         x

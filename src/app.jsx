@@ -1,4 +1,5 @@
-import React, { useState, useContext, Fragment } from 'react'
+import React, { useState, useContext } from 'react'
+import cn from 'classnames'
 import AddDiceModal from './components/addDiceModal'
 import Dice from './components/dice'
 import { dispatch } from './hooks/useBus'
@@ -26,7 +27,7 @@ const App = () => {
   const messages = useLocales()
 
   return (
-    <div className="app">
+    <div className="o-app">
       {printModal && (
         <AddDiceModal
           addDice={addDice}
@@ -34,58 +35,58 @@ const App = () => {
         />
       )}
 
-      <div className="actions">
-        <button
-          type="button"
-          onClick={() => setPrintModal(!printModal)}
-        >
-          {messages.add}
-        </button>
+      <div className="m-actions">
+        <div className="m-actions__secondaryActions">
+          <button
+            type="button"
+            onClick={() => setPrintModal(!printModal)}
+            className="a-button -outlined"
+          >
+            {messages.add}
+          </button>
 
-        <button
-          type="button"
-          onClick={clear}
-        >
-          {messages.clear}
-        </button>
+          <button
+            type="button"
+            onClick={clear}
+            className="a-button -outlined"
+          >
+            {messages.clear}
+          </button>
+        </div>
 
         <button
           type="button"
           onClick={roll}
+          className="a-actions__mainAction a-button -color"
         >
-          {messages.rollAllDices}
+          {dices.length > 1 ? messages.rollAllDices : messages.roll}
         </button>
       </div>
 
-      <div className="stats total">
-        {dices.length > 1 && (
-          <Fragment>
-            <span className="label">
-              {messages.total}
-            </span>
-            <span>
-              {dices.reduce((acc, dice) => acc + dice.roll, 0)}
-            </span>
-          </Fragment>
-        )}
+      <div className={cn('m-stats', 'm-stats__substract', '-bg_primary', { '-inactive': dices.length !== 2 })}>
+        <div className="a-stats__label">
+          {messages.substract}
+        </div>
+        <div className="a-stats__value">
+          {dices.length === 2
+            ? Math.abs(dices[0].roll - dices[1].roll) || 0
+            : 'X'
+          }
+        </div>
       </div>
 
-      <div className="stats substract">
-        {dices.length === 2 && (
-          <Fragment>
-            <span className="label">
-              {messages.substract}
-            </span>
-            <span>
-              {Math.abs(dices[0].roll - dices[1].roll) || 0}
-            </span>
-          </Fragment>
-        )}
+      <div className="m-stats m-stats__total -bg_secondary">
+        <div className="a-stats__label">
+          {messages.total}
+        </div>
+        <div className="a-stats__value">
+          {dices.reduce((acc, dice) => acc + (dice.roll || 0), 0)}
+        </div>
       </div>
 
-      <ul className="dices">
+      <ul className="m-dices">
         {dices.map(({ faces, id }) => (
-          <li key={id}>
+          <li key={id} className="m-dices__dice">
             <Dice
               key={id}
               id={id}

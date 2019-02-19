@@ -1,9 +1,42 @@
-.app {
+/* common */
+.a-button {
+  border: 0;
+  background-color: transparent;
+  padding: 1em 2em;
+}
+
+.a-button.-outlined {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+}
+
+.a-button.-color {
+  background: linear-gradient(to right, #6d327c, #485DA6, #00a1ba, #36C486);
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.-bg_primary {
+  color: var(--light);
+  background-color: var(--primary);
+}
+
+.-bg_secondary {
+  color: var(--light);
+  background-color: var(--secondary);
+}
+
+/* App */
+.o-app {
   display: grid;
   flex: 1;
   text-align: center;
-  grid-template:
-    "total substract"
+  background: var(--dark);
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "substract total"
     "dices dices"
     "actions actions"
   ;
@@ -14,33 +47,45 @@
   ;
 }
 
-.actions {
+.m-actions {
   grid-area: actions;
-  padding: 2em;
 }
 
-.total {
-  grid-area: total;
-  margin-left: auto;
+.a-actions__mainAction {
+  width: 100%;
 }
 
-.substract {
-  grid-area: substract;
-  margin-right: auto;
-}
-
-.stats {
-  margin-top: auto;
+.m-actions__secondaryActions {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
-.stats > .label {
+.m-stats__total {
+  grid-column: 1;
+  grid-area: total;
+}
+
+.m-stats__substract {
+  grid-column: 2;
+  grid-area: substract;
+}
+
+.m-stats .-inactive {
+  opacity: .5;
+}
+
+.a-stats__label {
+  font-size: .8em;
   padding: 1em;
-  color: #545454;
 }
 
-.dices {
+.a-stats__value {
+  font-size: 3em;
+  font-weight: 600;
+  padding: 0 .3em .3em;
+}
+
+.m-dices {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
@@ -50,6 +95,6 @@
   padding: 2em;
 }
 
-.dices .dice {
+.m-dices__dice {
   margin: 1em;
 }
