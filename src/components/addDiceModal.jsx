@@ -15,25 +15,26 @@ const AddDiceModal = ({ addDice, onClose }) => {
   useOutsideClick(ref, onClose)
 
   return (
-    <div className="modal">
+    <div className="o-modal">
       <div
-        className="card"
+        className="m-card"
         ref={ref}
       >
         <button
           type="button"
-          className="btn-close"
+          className="a-button"
           onClick={onClose}
         >
           X
         </button>
 
-        <ul className="list">
+        <ul className="a-list">
           {faces.map(number => (
-            <li key={number}>
+            <li key={number} className="a-list__item">
               <button
                 type="button"
                 onClick={() => addDice(number)}
+                className="a-button"
               >
                 {number}
               </button>
