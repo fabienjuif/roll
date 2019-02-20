@@ -1,60 +1,37 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import useRandom from '../hooks/useRandom'
-import useBus from '../hooks/useBus'
-import DicesContext from '../contexts/dices'
 import './dice.css'
 
-const Dice = ({ id, faces }) => {
-  const [value, rand] = useRandom(1, faces)
-
-  useBus('@@ui/ROLL>DICES', rand)
-
-  const { setRoll, remove } = useContext(DicesContext)
-  setRoll(id, value)
-
-  return (
+const Dice = ({
+  faces,
+  onClick,
+  value,
+}) => (
+  <button
+    type="button"
+    className={cn(`-dice-${faces}`, 'a-dice__roll', 'a-button')}
+    onClick={onClick}
+  >
     <div
-      className="m-dice"
+      className="a-dice__value"
     >
-      <div
-        className="a-dice__info"
-      >
-        <div
-          className="a-dice__faces"
-        >
-          {'D'}
-          {faces}
-        </div>
-
-        <button
-          type="button"
-          className="a-dice__remove"
-          onClick={remove(id)}
-        >
-          X
-        </button>
-      </div>
-
-      <button
-        type="button"
-        className={cn(`-dice-${faces}`, 'a-dice__roll', 'a-button')}
-        onClick={rand}
-      >
-        <div
-          className="a-dice__value"
-        >
-          {value}
-        </div>
-      </button>
+      {value}
     </div>
-  )
-}
+  </button>
+)
 
 Dice.propTypes = {
-  id: PropTypes.number.isRequired,
   faces: PropTypes.number.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  onClick: PropTypes.func,
+}
+
+Dice.defaultProps = {
+  onClick: undefined,
 }
 
 export default Dice

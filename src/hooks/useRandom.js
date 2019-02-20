@@ -9,7 +9,7 @@ const useRandom = (min = 0, max = Number.MAX_SAFE_INTEGER) => {
 
   if (value === undefined) rand()
 
-  return [value, rand]
+  return [value || 0, rand]
 }
 
 export default useRandom
