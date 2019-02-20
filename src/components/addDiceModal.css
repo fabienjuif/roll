@@ -1,6 +1,6 @@
 .o-modal {
   position: absolute;
-  background-color: var(--dark);
+  background-color: #0000008D;
   width: 100%;
   height: 100%;
   display: flex;
@@ -10,20 +10,32 @@
 
 .m-card {
   background-color: var(--light);
-  min-width: 20em;
-  max-width: 95%;
-  width: 50%;
   border-radius: 2px;
   padding: 2em;
+  box-shadow: 8px 8px 10px -8px black;
+  margin: 15%;
+  flex: 1;
+  position: relative;
 }
 
-.m-card * {
-  color: var(--dark);
+.m-card .a-close {
+  color: #919191;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0;
+  background-color: #ececec;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
 }
 
 .a-list {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .a-list__item {
