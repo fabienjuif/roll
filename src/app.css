@@ -4,6 +4,7 @@
   background-color: transparent;
   padding: 1em;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .a-button.-secondary {
@@ -25,7 +26,10 @@
   padding: 0;
 }
 
-.a-button.-dot:hover,
+.a-button.-dot:hover {
+  outline: none;
+}
+
 .a-button.-dot:active {
   background: linear-gradient(to top right, #6d327c, #485DA6, #00a1ba, #36C486);
   outline: none;
