@@ -50,10 +50,10 @@ const App = () => {
           className="a-actions__mainAction a-button -dot"
         >
 
-          <svg width="100%" height="100%">
-            <path d="M10,110 a1,1 0 0,1 200,0" fill="transparent" id="curve" />
-            <text className="-light">
-              <textPath textLength="70%" alignmentBaseline="hanging" href="#curve">
+          <svg width="100%" height="100%" overflow="visible" viewBox="none">
+            <path d="M25 108 A1,1 0 0 1 191,108" fill="transparent" id="curve" />
+            <text textLength="50%" className="-light">
+              <textPath startOffset="5%" textLength="50%" alignmentBaseline="baseline" href="#curve">
                 {messages.roll}
               </textPath>
             </text>
