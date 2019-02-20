@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import useOutsideClick from 'react-use/lib/useOutsideClick'
+import Dice from './dice'
 import './addDiceModal.css'
 
 const faces = [
@@ -22,7 +23,7 @@ const AddDiceModal = ({ addDice, onClose }) => {
       >
         <button
           type="button"
-          className="a-button"
+          className="a-button a-close"
           onClick={onClose}
         >
           X
@@ -31,13 +32,11 @@ const AddDiceModal = ({ addDice, onClose }) => {
         <ul className="a-list">
           {faces.map(number => (
             <li key={number} className="a-list__item">
-              <button
-                type="button"
+              <Dice
+                value={`D${number}`}
+                faces={number}
                 onClick={() => addDice(number)}
-                className="a-button"
-              >
-                {number}
-              </button>
+              />
             </li>
           ))}
         </ul>

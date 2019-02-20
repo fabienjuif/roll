@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 import cn from 'classnames'
 import AddDiceModal from './components/addDiceModal'
-import Dice from './components/dice'
 import ActionButton from './components/actionButton'
+import PlayableDice from './components/playableDice'
 import { dispatch } from './hooks/useBus'
 import useLocales from './hooks/useLocales'
 import DicesContext from './contexts/dices'
@@ -85,7 +85,7 @@ const App = () => {
       <ul className="m-dices">
         {dices.map(({ faces, id }) => (
           <li key={id} className="m-dices__dice">
-            <Dice
+            <PlayableDice
               key={id}
               id={id}
               faces={faces}
