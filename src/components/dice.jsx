@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 import useRandom from '../hooks/useRandom'
 import useBus from '../hooks/useBus'
 import DicesContext from '../contexts/dices'
@@ -15,32 +16,37 @@ const Dice = ({ id, faces }) => {
 
   return (
     <div
-      className={`m-dice -dice-${faces}`}
+      className="m-dice"
     >
-      <button
-        type="button"
-        className="a-button a-dice__roll"
-        onClick={rand}
+      <div
+        className="a-dice__info"
       >
         <div
           className="a-dice__faces"
         >
+          {'D'}
           {faces}
         </div>
 
+        <button
+          type="button"
+          className="a-dice__remove"
+          onClick={remove(id)}
+        >
+          X
+        </button>
+      </div>
+
+      <button
+        type="button"
+        className={cn(`-dice-${faces}`, 'a-dice__roll', 'a-button')}
+        onClick={rand}
+      >
         <div
           className="a-dice__value"
         >
           {value}
         </div>
-      </button>
-
-      <button
-        type="button"
-        className="a-button a-dice__remove"
-        onClick={remove(id)}
-      >
-        x
       </button>
     </div>
   )

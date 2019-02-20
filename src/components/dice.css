@@ -1,34 +1,66 @@
 .m-dice {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .a-dice__roll {
   display: flex;
+  box-shadow: 5px 5px 10px -2px #52525280;
+  color: white;
+  width: 4em;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 4em;
 }
 
-.a-dice__faces,
-.a-dice__value {
-  padding: 1em;
+.a-dice__faces {
+  color: #6e6e6e; /* TODO: var */
+  margin-left: .5em;
+}
+
+.a-dice__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7em;
+  background-color: #ededed; /* TODO: var */
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 5em;
+  font-size: 0.8em;
 }
 
 .a-dice__remove {
   color: white;
-  background-color: #0000004d;
+  background-color: #cfcfcf; /* TODO: var */
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
 }
 
-.-dice-4 {
-  background-color: pink;
+.a-button.-dice-4 {
+  background-color: #d49aa4;
+  border: 1px solid #9d8085;
 }
 
-.-dice-6 {
-  background-color: blue;
-  color: white;
+.a-button.-dice-6 {
+  background-color: #5d85d7;
+  border: 1px solid #2f5dbc;
 }
 
-.-dice-10 {
-  background-color: yellow;
+.a-button.-dice-10 {
+  background-color: #b2b27e;
+  border: 1px solid #858558;
 }
 
-.-dice-20 {
-  background-color: green;
+.a-button.-dice-20 {
+  background-color: #78be78;
+  border: 1px solid #458a45;
 }

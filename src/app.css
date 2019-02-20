@@ -3,6 +3,7 @@
   border: 0;
   background-color: transparent;
   padding: 1em 2em;
+  cursor: pointer;
 }
 
 .a-button.-outlined {
@@ -32,7 +33,7 @@
   display: grid;
   flex: 1;
   text-align: center;
-  background: var(--dark);
+  background: var(--light);
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   grid-template-areas:
