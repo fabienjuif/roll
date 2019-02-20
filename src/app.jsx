@@ -1,10 +1,13 @@
 import React, { useState, useContext } from 'react'
 import cn from 'classnames'
 import AddDiceModal from './components/addDiceModal'
+import ActionButton from './components/actionButton'
 import PlayableDice from './components/playableDice'
 import { dispatch } from './hooks/useBus'
 import useLocales from './hooks/useLocales'
 import DicesContext from './contexts/dices'
+import IconAdd from './icon/add'
+import IconRemove from './icon/remove'
 import './app.css'
 
 const App = () => {
@@ -37,29 +40,24 @@ const App = () => {
 
       <div className="m-actions">
         <div className="m-actions__secondaryActions">
-          <button
-            type="button"
-            onClick={() => setPrintModal(!printModal)}
-            className="a-button -outlined"
-          >
-            {messages.add}
-          </button>
-
-          <button
-            type="button"
-            onClick={clear}
-            className="a-button -outlined"
-          >
-            {messages.clear}
-          </button>
+          <ActionButton onClick={clear} label={messages.clear}><IconRemove /></ActionButton>
+          <ActionButton onClick={() => setPrintModal(!printModal)} label={messages.add}><IconAdd /></ActionButton>
         </div>
 
         <button
           type="button"
           onClick={roll}
-          className="a-actions__mainAction a-button -color"
+          className="a-actions__mainAction a-button -dot"
         >
-          {dices.length > 1 ? messages.rollAllDices : messages.roll}
+
+          <svg width="100%" height="100%" overflow="visible" viewBox="none">
+            <path d="M25 108 A1,1 0 0 1 191,108" fill="transparent" id="curve" />
+            <text textLength="50%" className="-light">
+              <textPath startOffset="5%" textLength="50%" alignmentBaseline="baseline" href="#curve">
+                {messages.roll}
+              </textPath>
+            </text>
+          </svg>
         </button>
       </div>
 
