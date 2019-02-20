@@ -5,10 +5,9 @@
   padding: 1em 2em;
 }
 
-.a-button.-outlined {
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid;
+.a-button.-secondary {
+  fill: var(--secondary);
+  color: var(--secondary);
 }
 
 .a-button.-color {

@@ -2,9 +2,12 @@ import React, { useState, useContext } from 'react'
 import cn from 'classnames'
 import AddDiceModal from './components/addDiceModal'
 import Dice from './components/dice'
+import ActionButton from './components/actionButton'
 import { dispatch } from './hooks/useBus'
 import useLocales from './hooks/useLocales'
 import DicesContext from './contexts/dices'
+import IconAdd from './icon/add'
+import IconRemove from './icon/remove'
 import './app.css'
 
 const App = () => {
@@ -37,21 +40,8 @@ const App = () => {
 
       <div className="m-actions">
         <div className="m-actions__secondaryActions">
-          <button
-            type="button"
-            onClick={() => setPrintModal(!printModal)}
-            className="a-button -outlined"
-          >
-            {messages.add}
-          </button>
-
-          <button
-            type="button"
-            onClick={clear}
-            className="a-button -outlined"
-          >
-            {messages.clear}
-          </button>
+          <ActionButton onClick={() => setPrintModal(!printModal)} label={messages.add}><IconAdd /></ActionButton>
+          <ActionButton onClick={clear} label={messages.clear}><IconRemove /></ActionButton>
         </div>
 
         <button
