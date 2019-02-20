@@ -40,16 +40,24 @@ const App = () => {
 
       <div className="m-actions">
         <div className="m-actions__secondaryActions">
-          <ActionButton onClick={() => setPrintModal(!printModal)} label={messages.add}><IconAdd /></ActionButton>
           <ActionButton onClick={clear} label={messages.clear}><IconRemove /></ActionButton>
+          <ActionButton onClick={() => setPrintModal(!printModal)} label={messages.add}><IconAdd /></ActionButton>
         </div>
 
         <button
           type="button"
           onClick={roll}
-          className="a-actions__mainAction a-button -color"
+          className="a-actions__mainAction a-button -dot"
         >
-          {dices.length > 1 ? messages.rollAllDices : messages.roll}
+
+          <svg width="100%" height="100%">
+            <path d="M10,110 a1,1 0 0,1 200,0" fill="transparent" id="curve" />
+            <text className="-light">
+              <textPath textLength="70%" alignmentBaseline="hanging" href="#curve">
+                {messages.roll}
+              </textPath>
+            </text>
+          </svg>
         </button>
       </div>
 
