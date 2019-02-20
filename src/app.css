@@ -7,6 +7,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.a-button:hover {
+  outline: none;
+}
+
 .a-button.-secondary {
   fill: var(--secondary);
   color: var(--secondary);
@@ -24,10 +28,6 @@
   width: 216px;
   box-shadow: -1px -1px 10px 0px #485DA6;
   padding: 0;
-}
-
-.a-button.-dot:hover {
-  outline: none;
 }
 
 .a-button.-dot:active {
