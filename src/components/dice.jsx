@@ -4,13 +4,14 @@ import cn from 'classnames'
 import './dice.css'
 
 const Dice = ({
+  className,
   faces,
   onClick,
   value,
 }) => (
   <button
     type="button"
-    className={cn(`-dice-${faces}`, 'a-dice__roll', 'a-button')}
+    className={cn(className, `-dice-${faces}`, 'a-dice__roll', 'a-button')}
     onClick={onClick}
   >
     <div
@@ -22,6 +23,7 @@ const Dice = ({
 )
 
 Dice.propTypes = {
+  className: PropTypes.string,
   faces: PropTypes.number.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
@@ -31,6 +33,7 @@ Dice.propTypes = {
 }
 
 Dice.defaultProps = {
+  className: undefined,
   onClick: undefined,
 }
 

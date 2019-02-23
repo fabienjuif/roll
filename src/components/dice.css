@@ -55,9 +55,19 @@
   border: 1px solid #2f5dbc;
 }
 
+.a-button.-dice-8 {
+  background-color: #ae5dd7;
+  border: 1px solid #5d3a6f;
+}
+
 .a-button.-dice-10 {
   background-color: #b2b27e;
   border: 1px solid #858558;
+}
+
+.a-button.-dice-12 {
+  background-color: #be7d7d;
+  border: 1px solid #813939;
 }
 
 .a-button.-dice-20 {

@@ -14,7 +14,7 @@
   border-radius: 2px;
   padding: 2em;
   box-shadow: 8px 8px 10px -8px black;
-  margin: 15%;
+  margin: 10%;
   flex: 1;
   position: relative;
 }
@@ -41,4 +41,8 @@
 
 .a-list__item {
   margin: 1em;
+}
+
+.a-modal-dice {
+  font-size: 0.8em;
 }
