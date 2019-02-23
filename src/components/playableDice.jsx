@@ -9,7 +9,10 @@ const PlayableDice = ({
   id,
   faces,
 }) => {
-  const [value, rand] = useRandom(1, faces)
+  const [value, rand] = useRandom(
+    faces === 10 ? 0 : 1,
+    faces === 10 ? faces - 1 : faces,
+  )
 
   useBus('@@ui/ROLL>DICES', rand)
 

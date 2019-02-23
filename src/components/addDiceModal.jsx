@@ -7,7 +7,9 @@ import './addDiceModal.css'
 const faces = [
   4,
   6,
+  8,
   10,
+  12,
   20,
 ]
 
@@ -33,6 +35,7 @@ const AddDiceModal = ({ addDice, onClose }) => {
           {faces.map(number => (
             <li key={number} className="a-list__item">
               <Dice
+                className="a-modal-dice"
                 value={`D${number}`}
                 faces={number}
                 onClick={() => addDice(number)}
