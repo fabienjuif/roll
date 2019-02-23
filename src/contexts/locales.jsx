@@ -35,7 +35,7 @@ const LocalesProvider = ({ children }) => {
       !locales
       || !locales.date
       || !locales.lang
-      || (locales.lang !== currentLang && (Date.now() - locales.date) > 3600000 /* 1 hour */)
+      || locales.lang !== currentLang
       || (Date.now() - locales.date) > 259200000 /* 3 days */
     ) {
       const loadLocales = fetchLang => (
