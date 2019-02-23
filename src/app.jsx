@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, Fragment } from 'react'
 import cn from 'classnames'
 import AddDiceModal from './components/addDiceModal'
 import ActionButton from './components/actionButton'
@@ -61,25 +61,30 @@ const App = () => {
         </button>
       </div>
 
-      <div className={cn('m-stats', 'm-stats__substract', '-bg_primary', { '-inactive': dices.length !== 2 })}>
-        <div className="a-stats__label">
-          {messages.substract}
-        </div>
-        <div className="a-stats__value">
-          {dices.length === 2
-            ? Math.abs(dices[0].roll - dices[1].roll) || 0
-            : 'X'
-          }
-        </div>
+      <div className={cn('m-stats', 'm-stats__substract', { '-inactive': dices.length !== 2 })}>
+        {dices.length === 2 && (
+          <Fragment>
+            <div className="a-stats__label">
+              {messages.substract}
+            </div>
+            <div className="a-stats__value">
+              {Math.abs(dices[0].roll - dices[1].roll) || 0}
+            </div>
+          </Fragment>
+        )}
       </div>
 
-      <div className="m-stats m-stats__total -bg_secondary">
-        <div className="a-stats__label">
-          {messages.total}
-        </div>
-        <div className="a-stats__value">
-          {dices.reduce((acc, dice) => acc + (dice.roll || 0), 0)}
-        </div>
+      <div className="m-stats m-stats__total">
+        {dices.length > 0 && (
+          <Fragment>
+            <div className="a-stats__label">
+              {messages.total}
+            </div>
+            <div className="a-stats__value">
+              {dices.reduce((acc, dice) => acc + (dice.roll || 0), 0)}
+            </div>
+          </Fragment>
+        )}
       </div>
 
       <ul className="m-dices">
