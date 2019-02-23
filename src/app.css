@@ -60,6 +60,16 @@
   background: var(--light);
 }
 
+@media (min-width: 800px) {
+  .o-app {
+    max-width: 25em;
+    margin: auto;
+    max-height: 50em;
+    border: 1px solid #c4c4c4;
+    height: 100%;
+  }
+}
+
 .m-actions {
   display: flex;
 }

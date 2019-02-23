@@ -29,6 +29,8 @@ code {
 #root {
   flex: 1;
   display: flex;
+  background-color: #efefef;
+  overflow: hidden;
 }
 
 * {
