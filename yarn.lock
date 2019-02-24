@@ -10042,6 +10042,11 @@ use-callbag@^0.1.2:
   dependencies:
     callbag-subscribe "^1.4.1"
 
+use-locales@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/use-locales/-/use-locales-0.1.2.tgz#40a70e80c3b37a319d31e55db9218c2672e715d9"
+  integrity sha512-UDlnVoDQHpEaX11ikXs6Td5T99Aaikp6uxyLUrkvLowPJ5w8aDYaFfxCUGHNLtrzONK0v68A0Enpsg3IXQlf3A==
+
 use-onclickoutside@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/use-onclickoutside/-/use-onclickoutside-0.1.1.tgz#14327d6062639541374cb48db02cac3ebe7836ac"

@@ -5,7 +5,7 @@ import './index.css'
 import 'normalize.css'
 import App from './app'
 import { DicesProvider } from './contexts/dices'
-import { LocalesProvider } from './contexts/locales'
+import { LocalesProvider } from 'use-locales'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
